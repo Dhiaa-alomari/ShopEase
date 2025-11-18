@@ -28,6 +28,12 @@ $(document).ready(function () {
             <div class="card-body d-flex flex-column justify-content-between">
               <h5 class="card-title">${p.name}</h5>
               <p class="card-text">${p.type} - <strong>${p.price} sek</strong></p>
+              <div>
+                <button 
+                class="btn btn-sm btn-outline-link text-danger delete-product" 
+                data-id="${p.id}"
+                >Delete</button>
+              </div>
             </div>
           </div>
         </div>
@@ -41,7 +47,7 @@ $(document).ready(function () {
     let filtered = products.filter((p) => p.name.toLowerCase().includes(term));
     renderProducts(filtered);
   });
-  
+
   // ======== Filter By Price ===========
   $("#priceRange").on("input", function () {
     let maxPrice = $(this).val();
@@ -55,5 +61,21 @@ $(document).ready(function () {
     let type = $(this).val();
     let filtered = type ? products.filter((p) => p.type === type) : products;
     renderProducts(filtered);
+  });
+
+  // ======== Delete Product ===========
+  $(document).on("click", ".delete-product", function () {
+    if (confirm("Are you sure you want to delete this product?")) {
+      let id = $(this).data("id");
+      products = products.filter((p) => p.id !== id);
+      localStorage.setItem("products", JSON.stringify(products));
+      renderProducts(products);
+      $.toast({
+        heading: 'Deleted',
+        text: 'Deleted Product Successfully',
+        icon: 'error',
+        position: 'top-right'
+      });
+    }
   });
 })

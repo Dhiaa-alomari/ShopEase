@@ -7,3 +7,7 @@ body {
   box-sizing: border-box;
   overflow-x: hidden !important;
 }
+
+input {
+  margin-top: 4px !important;
+}
