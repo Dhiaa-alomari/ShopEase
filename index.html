@@ -23,7 +23,23 @@
       <h1 class="text-center mb-5 lh-lg">ShopEase</h1>
     </div>
 
-    
+    <!-- Filters Section -->
+    <section class="row mb-4">
+      <div class="col-md-6 mb-3 mb-md-0">
+        <select id="typeFilter" class="form-select">
+          <option value="">All Types</option>
+          <option value="Electronics">Electronics</option>
+          <option value="Fashion">Fashion</option>
+          <option value="Accessories">Accessories</option>
+        </select>
+      </div>
+      <div class="col-md-6">
+        <span id="priceLabel"> Filter By Price :</span>
+        <input type="range" class="form-range my-3" id="priceRange" min="0" max="2000" step="50" value="2000">
+      </div>
+    </section>
+
+    <!-- Products display section -->
     <div id="productsContainer" class="row g-3"></div>
   </header>
 

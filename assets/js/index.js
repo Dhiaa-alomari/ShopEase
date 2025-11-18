@@ -34,4 +34,19 @@ $(document).ready(function () {
       `);
     });
   }
+
+  // ======== Filter By Price ===========
+  $("#priceRange").on("input", function () {
+    let maxPrice = $(this).val();
+    $("#priceLabel").text(`Max Price : ${maxPrice} sek`);
+    let filtered = products.filter((p) => p.price <= maxPrice);
+    renderProducts(filtered);
+  });
+
+  // ======== Filter By Category ===========
+  $("#typeFilter").on("change", function () {
+    let type = $(this).val();
+    let filtered = type ? products.filter((p) => p.type === type) : products;
+    renderProducts(filtered);
+  });
 })
