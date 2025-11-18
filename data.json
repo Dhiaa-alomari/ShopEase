@@ -1,0 +1,32 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Laptop",
+      "type": "Electronics",
+      "price": 1200,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/f/f5/No-Image-Placeholder-landscape.svg"
+    },
+    {
+      "id": 2,
+      "name": "Shoes",
+      "type": "Fashion",
+      "price": 80,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/f/f5/No-Image-Placeholder-landscape.svg"
+    },
+    {
+      "id": 3,
+      "name": "Watch",
+      "type": "Accessories",
+      "price": 150,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/f/f5/No-Image-Placeholder-landscape.svg"
+    },
+    {
+      "id": 4,
+      "name": "Headphones",
+      "type": "Electronics",
+      "price": 200,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/f/f5/No-Image-Placeholder-landscape.svg"
+    }
+  ]
+}
