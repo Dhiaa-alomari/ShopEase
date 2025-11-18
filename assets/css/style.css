@@ -1,0 +1,9 @@
+/* Global */
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  width: auto;
+  box-sizing: border-box;
+  overflow-x: hidden !important;
+}
