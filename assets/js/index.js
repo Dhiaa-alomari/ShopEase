@@ -35,6 +35,13 @@ $(document).ready(function () {
     });
   }
 
+  // ======== Search ===========
+  $("#searchInput").on("keyup", function () {
+    let term = $(this).val().toLowerCase();
+    let filtered = products.filter((p) => p.name.toLowerCase().includes(term));
+    renderProducts(filtered);
+  });
+  
   // ======== Filter By Price ===========
   $("#priceRange").on("input", function () {
     let maxPrice = $(this).val();
