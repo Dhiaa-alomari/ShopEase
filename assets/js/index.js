@@ -2,7 +2,7 @@ $(document).ready(function () {
   let products = [];
 
 // Loading the initial JSON file only the first time
-  $.getJSON("../../data.json", function (data) {
+  $.getJSON("assets/server/data.json", function (data) {
     if (!localStorage.getItem("products")) {
       localStorage.setItem("products", JSON.stringify(data.products));
     }
@@ -19,7 +19,7 @@ $(document).ready(function () {
       );
       return;
     }
-
+ 
     items.forEach(function (p) {
       $("#productsContainer").append(`
         <div class="col-sm-6 col-md-4 col-lg-3" id="product-${p.id}">
