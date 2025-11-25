@@ -11,3 +11,11 @@ body {
 input {
   margin-top: 4px !important;
 }
+
+/* __ Index Page __ */
+
+.form-range {
+    height: 10px;
+    border-radius: 10px;
+    background: gray;
+}

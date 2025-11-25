@@ -22,7 +22,7 @@ $(document).ready(function () {
  
     items.forEach(function (p) {
       $("#productsContainer").append(`
-        <div class="col-sm-6 col-md-4 col-lg-3" id="product-${p.id}">
+        <div class="col-6 col-md-4 col-lg-3" id="product-${p.id}">
           <div class="card h-100 shadow-sm d-flex flex-column justify-content-between">
             <img src="${p.image}" class="card-img-top" alt="${p.name}">
             <div class="card-body d-flex flex-column justify-content-between">
