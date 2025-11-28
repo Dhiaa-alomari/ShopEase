@@ -1,5 +1,6 @@
 $(document).ready(function () {
   let products = [];
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 // Loading the initial JSON file only the first time
   $.getJSON("assets/server/data.json", function (data) {
@@ -12,6 +13,7 @@ $(document).ready(function () {
 
 // ======== Products Display Function ===========
   function renderProducts(items) {
+    $("a[href='cart.html']").html(`Cart(${cart.length}<sub>item</sub>)`);
     $("#productsContainer").empty();
     if (items.length === 0) {
       $("#productsContainer").html(
