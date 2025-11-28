@@ -63,6 +63,47 @@ $(document).ready(function () {
     renderProducts(filtered);
   });
 
+  // ======== Add New Product ===========
+
+  $("#addProductBtn").click(function () {
+    $("#productForm")[0].reset();
+    $("#productId").val("");
+
+    let modal = new bootstrap.Modal(document.getElementById("productModal"));
+    modal.show();
+  });
+
+  $("#productForm").submit(function (e) {
+    e.preventDefault();
+
+    let id = $("#productId").val();
+    let name = $("#productName").val();
+    let type = $("#productType").val();
+    let price = parseFloat($("#productPrice").val());
+    let image = $("#productImage").val() || "src/images/No-Image-Placeholder-landscape.svg";
+
+    if (!id) {
+      let newId = products.length
+        ? Math.max(...products.map((p) => p.id)) + 1
+        : 1;
+      products.push({ id: newId, name, type, price, image });
+      $.toast({
+        heading: 'success',
+        text: 'Created New Product Successfully',
+        icon: 'success',
+        position: 'top-right'
+      });
+    }
+
+    localStorage.setItem("products", JSON.stringify(products));
+    renderProducts(products);
+
+    let modalEl = document.getElementById("productModal");
+    let modal = bootstrap.Modal.getInstance(modalEl);
+    modal.hide();
+
+  });
+
   // ======== Delete Product ===========
   $(document).on("click", ".delete-product", function () {
     if (confirm("Are you sure you want to delete this product?")) {

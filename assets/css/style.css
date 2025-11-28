@@ -1,4 +1,4 @@
-/* Global */
+/* __Global__ */
 body {
   margin: 0;
   padding: 0;
@@ -7,6 +7,7 @@ body {
   box-sizing: border-box;
   overflow-x: hidden !important;
 }
+
 
 input {
   margin-top: 4px !important;
