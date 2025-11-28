@@ -8,6 +8,10 @@ body {
   overflow-x: hidden !important;
 }
 
+button, a {
+  width: 150px !important;
+  margin: 4px !important;
+}
 
 input {
   margin-top: 4px !important;
@@ -15,8 +19,28 @@ input {
 
 /* __ Index Page __ */
 
+button[data-bs-dismiss="modal"] {
+  width: fit-content !important;
+}
+
 .form-range {
     height: 10px;
     border-radius: 10px;
     background: gray;
+}
+
+.form-range::-webkit-slider-thumb {
+    background: green; 
+    cursor: pointer;
+}
+
+.form-range::-moz-range-thumb {
+    background: green; 
+    cursor: pointer;
+}
+
+.card button {
+  background-color:azure;
+  border-bottom: 1px solid gray;
+  padding: 1px;
 }
