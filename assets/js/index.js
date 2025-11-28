@@ -22,13 +22,17 @@ $(document).ready(function () {
  
     items.forEach(function (p) {
       $("#productsContainer").append(`
-        <div class="col-6 col-md-4 col-lg-3" id="product-${p.id}">
+        <div class="col-sm-6 col-md-4 col-lg-3" id="product-${p.id}">
           <div class="card h-100 shadow-sm d-flex flex-column justify-content-between">
             <img src="${p.image}" class="card-img-top" alt="${p.name}">
             <div class="card-body d-flex flex-column justify-content-between">
               <h5 class="card-title">${p.name}</h5>
               <p class="card-text">${p.type} - <strong>${p.price} sek</strong></p>
-              <div>
+              <div class="d-flex justify-content-between">
+                <button 
+                class="btn btn-sm btn-outline-link text-primary edit-product"
+                data-id="${p.id}"
+                >Edit</button>
                 <button 
                 class="btn btn-sm btn-outline-link text-danger delete-product" 
                 data-id="${p.id}"
@@ -82,7 +86,18 @@ $(document).ready(function () {
     let price = parseFloat($("#productPrice").val());
     let image = $("#productImage").val() || "https://upload.wikimedia.org/wikipedia/commons/f/f5/No-Image-Placeholder-landscape.svg";
 
-    if (!id) {
+    if (id) {
+      // Product modification
+      let index = products.findIndex((p) => p.id == id);
+      products[index] = { id: parseInt(id), name, type, price, image };
+      $.toast({
+        heading: 'success',
+        text: 'Modified Product Successfully',
+        icon: 'success',
+        position: 'top-right'
+      });
+    } else {
+      // Add new product
       let newId = products.length
         ? Math.max(...products.map((p) => p.id)) + 1
         : 1;
@@ -102,6 +117,21 @@ $(document).ready(function () {
     let modal = bootstrap.Modal.getInstance(modalEl);
     modal.hide();
 
+  });
+
+  // ======== Edit Product ===========
+  $(document).on("click", ".edit-product", function () {
+    let id = $(this).data("id");
+    let p = products.find((p) => p.id === id);
+
+    $("#productId").val(p.id);
+    $("#productName").val(p.name);
+    $("#productType").val(p.type);
+    $("#productPrice").val(p.price);
+    $("#productImage").val(p.image);
+
+    let modal = new bootstrap.Modal(document.getElementById("productModal"));
+    modal.show();
   });
 
   // ======== Delete Product ===========
