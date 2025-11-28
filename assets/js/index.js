@@ -34,7 +34,7 @@ $(document).ready(function () {
                 <button
                 class="btn btn-sm btn-outline-link text-success add-to-cart"
                 data-id="${p.id}"
-                >Buy Now</button>
+                >Add</button>
                 <button 
                 class="btn btn-sm btn-outline-link text-primary edit-product"
                 data-id="${p.id}"
