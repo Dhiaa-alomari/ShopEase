@@ -51,4 +51,23 @@ renderCart();
     });
   });
 
+  // ======== Increment quantity ===========
+  $(document).on('click', '.increment-qty', function () {
+    let idx = $(this).data('index');
+    console.log(cart[idx].qty)
+    cart[idx].qty += 1;
+    localStorage.setItem('cart', JSON.stringify(cart));
+    renderCart();
+  });
+
+  // ======== Decrement quantity ===========
+  $(document).on('click', '.decrement-qty', function () {
+    let idx = $(this).data('index');
+    if (cart[idx].qty > 1) {
+      cart[idx].qty -= 1;
+      localStorage.setItem('cart', JSON.stringify(cart));
+      renderCart();
+    }
+  });
+
 })
