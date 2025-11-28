@@ -29,6 +29,10 @@ $(document).ready(function () {
               <h5 class="card-title">${p.name}</h5>
               <p class="card-text">${p.type} - <strong>${p.price} sek</strong></p>
               <div class="d-flex justify-content-between">
+                <button
+                class="btn btn-sm btn-outline-link text-success add-to-cart"
+                data-id="${p.id}"
+                >Buy Now</button>
                 <button 
                 class="btn btn-sm btn-outline-link text-primary edit-product"
                 data-id="${p.id}"
@@ -44,6 +48,29 @@ $(document).ready(function () {
       `);
     });
   }
+
+  // ======== Add to cart ===========
+  $(document).on("click", ".add-to-cart", function () {
+    let id = $(this).data("id");
+    let product = products.find((p) => p.id === id);
+    let existing = cart.find((p) => p.id === id);
+
+    if (existing) {
+      existing.qty += 1;
+    } else {
+      cart.push({ ...product, qty: 1 });
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+    $("a[href='cart.html']").html(`Cart(${cart.length}<sub>item</sub>)`);
+
+    $.toast({
+      heading: 'success',
+      text: 'Product added to cart',
+      icon: 'success',
+      position: 'top-right'
+    });
+  });
 
   // ======== Search ===========
   $("#searchInput").on("keyup", function () {
