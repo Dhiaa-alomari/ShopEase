@@ -70,4 +70,14 @@ renderCart();
     }
   });
 
+  // ======== Show Checkout modal ===========
+  $("#checkoutBtn").click(function () {
+    $("#checkoutModal").modal('show');
+  });
+
+  // ======== Confirm Checkout ===========
+  $("#confirmCheckout").click(function () {
+    localStorage.removeItem('cart');
+    window.location.href = "index.html"; //redirect to home page
+  });
 })
