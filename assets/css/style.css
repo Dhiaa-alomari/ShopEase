@@ -44,3 +44,9 @@ button[data-bs-dismiss="modal"] {
   border-bottom: 1px solid gray;
   padding: 1px;
 }
+
+/* __ Cart Page __ */
+
+tr td button {
+  width: fit-content !important;
+}
