@@ -80,7 +80,7 @@ $(document).ready(function () {
     let name = $("#productName").val();
     let type = $("#productType").val();
     let price = parseFloat($("#productPrice").val());
-    let image = $("#productImage").val() || "src/images/No-Image-Placeholder-landscape.svg";
+    let image = $("#productImage").val() || "https://upload.wikimedia.org/wikipedia/commons/f/f5/No-Image-Placeholder-landscape.svg";
 
     if (!id) {
       let newId = products.length
