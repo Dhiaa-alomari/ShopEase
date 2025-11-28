@@ -3,7 +3,7 @@ $(document).ready(function () {
 
 renderCart();
 
-// ======== Render Cart ===========
+  // ======== Render Cart ===========
   function renderCart() {
     $("#cartItems").empty();
     let total = 0;
@@ -37,5 +37,18 @@ renderCart();
     total = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
     $("#totalPrice").text(total);
   }
-  
+
+  // ======== Remove item from cart ===========
+  $(document).on('click', '.remove-item', function () {
+    cart.splice($(this).data('index'), 1);
+    localStorage.setItem('cart', JSON.stringify(cart));
+    renderCart()
+    $.toast({
+        heading: 'Deleted',
+        text: 'Deleted Product From Cart',
+        icon: 'error',
+        position: 'top-right'
+    });
+  });
+
 })
