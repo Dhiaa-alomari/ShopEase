@@ -50,7 +50,7 @@ This JS project contents two pages [Home page / Cart pgae]
 <br>
 
 ## Wireframe
-*   <u>Desktop Design:</u>
+###   <u>Desktop Design:</u>
 1. Home Page:
 <br>
 <img src="assets/images/wireframe-home-desktop.png" style="max-width:200px" alt="wireframe for home page in desktop"/>
@@ -60,7 +60,7 @@ This JS project contents two pages [Home page / Cart pgae]
 <img src="assets/images/wireframe-cart-desktop.png" style="max-width:200px" alt="wireframe for cart page in desktop"/>
 <br>
 
-*  <u>Mobile Design:</u>
+###  <u>Mobile Design:</u>
 1.  Home page:
 <br>
 <img src="assets/images/wireframe-home-mobile.png" style="max-width:150px" alt="home page wireframe in mobile"/>
@@ -71,7 +71,7 @@ This JS project contents two pages [Home page / Cart pgae]
 <br>
       
 ## CSS, HTML and JS codes are tested
-*  All the codes in the project are tested in service [**<u>W3C CSS & HTML Validator</u>**] and [**<u>www.site24x7.com</u>**]
+*  All the codes in the project are tested in service [**<u>[W3C HTML Validator](https://validator.w3.org/)</u>**] , **<u>[W3C CSS Validator](https://jigsaw.w3.org/)</u>** and **<u>www.site24x7.com</u>**
 
 *  <u>HTML files tested:</u>
 1.  index.html:
