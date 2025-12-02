@@ -23,6 +23,10 @@ button[data-bs-dismiss="modal"] {
   width: fit-content !important;
 }
 
+.visually-hidden{
+  visibility: hidden !important;
+}
+
 .form-range {
     height: 10px;
     border-radius: 10px;
