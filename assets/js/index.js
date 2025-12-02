@@ -29,9 +29,9 @@ $(document).ready(function () {
           <div class="card h-100 shadow-sm d-flex flex-column justify-content-between">
             <img src="${p.image}" class="card-img-top" alt="${p.name}">
             <div class="card-body d-flex flex-column justify-content-between">
-              <h5 class="card-title">${p.name}</h5>
+              <p class="card-title h5">${p.name}</p>
               <p class="card-text">${p.type} - <strong>${p.price} sek</strong></p>
-              <div class="btn-group btn-group-sm d-flex justify-content-center" role="toolbar"Toolbar with button groups">
+              <div class="btn-group btn-group-sm d-flex justify-content-center" role="toolbar" aria-label="Toolbar with button groups">
                 <button
                 class="btn btn-sm btn-outline-success text-dark mx-1 px-1 add-to-cart"
                 data-id="${p.id}"
