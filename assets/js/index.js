@@ -1,3 +1,4 @@
+/* jshint esversion: 9 */
 $(document).ready(function () {
   let products = [];
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -30,17 +31,17 @@ $(document).ready(function () {
             <div class="card-body d-flex flex-column justify-content-between">
               <h5 class="card-title">${p.name}</h5>
               <p class="card-text">${p.type} - <strong>${p.price} sek</strong></p>
-              <div class="d-flex justify-content-between">
+              <div class="btn-group btn-group-sm d-flex justify-content-center" role="toolbar"Toolbar with button groups">
                 <button
-                class="btn btn-sm btn-outline-link text-success add-to-cart"
+                class="btn btn-sm btn-outline-success text-dark mx-1 px-1 add-to-cart"
                 data-id="${p.id}"
                 >Add</button>
                 <button 
-                class="btn btn-sm btn-outline-link text-primary edit-product"
+                class="btn btn-sm btn-outline-warning text-dark mx-1 px-1 edit-product"
                 data-id="${p.id}"
                 >Edit</button>
                 <button 
-                class="btn btn-sm btn-outline-link text-danger delete-product" 
+                class="btn btn-sm btn-outline-danger text-dark mx-1 px-1 delete-product" 
                 data-id="${p.id}"
                 >Delete</button>
               </div>
@@ -127,9 +128,7 @@ $(document).ready(function () {
       });
     } else {
       // Add new product
-      let newId = products.length
-        ? Math.max(...products.map((p) => p.id)) + 1
-        : 1;
+      let newId = products.length? Math.max(...products.map((p) => p.id)) + 1 : 1;
       products.push({ id: newId, name, type, price, image });
       $.toast({
         heading: 'success',
@@ -178,4 +177,4 @@ $(document).ready(function () {
       });
     }
   });
-})
+});

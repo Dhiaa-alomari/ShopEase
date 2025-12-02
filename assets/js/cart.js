@@ -1,3 +1,4 @@
+/* jshint esversion: 9 */
 $(document).ready(function () {
   let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
@@ -80,4 +81,4 @@ renderCart();
     localStorage.removeItem('cart');
     window.location.href = "index.html"; //redirect to home page
   });
-})
+});

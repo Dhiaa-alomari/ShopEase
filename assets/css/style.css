@@ -44,7 +44,6 @@ button[data-bs-dismiss="modal"] {
 }
 
 .card button {
-  background-color:azure;
   border-bottom: 1px solid gray;
   padding: 1px;
 }
