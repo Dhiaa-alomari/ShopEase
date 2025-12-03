@@ -28,7 +28,7 @@ renderCart();
             <span class="mx-2">${item.qty}</span>
             <button class="btn btn-sm btn-outline-secondary increment-qty" data-index="${i}">+</button>
           </td>
-          <td>${subtotal}$</td>
+          <td>${subtotal}sek</td>
           <td><button class="btn btn-danger btn-sm remove-item" data-index="${i}">Delete</button></td>
         </tr>
       `);
