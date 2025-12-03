@@ -152,31 +152,34 @@ Before Debug:
 <img src="assets/images/error-Heading elements are not in a sequentially-descending order.png" style="max-width:200px" alt="Heading elements are not in a sequentially-descending order - image 2"/>
 <br>
 After Debug:
+<br>
 <img src="assets/images/fix-Heading elements are not in a sequentially-descending order.png" style="max-width:200px" alt="Heading elements are not in a sequentially-descending order"/>
 
 ### 2.  <u>Select element without label</U>
-
 This warning get from Ligthouse tool in Google Chrome Browser for optimizing search engine accessibility.
-To fix the Lighthouse warning, use the aria-label attribute on the <select> element as an alternative to a visible <label> element.
+To fix the Lighthouse warning, use the aria-label attribute on the select element as an alternative to a visible label element.
+
 
 Before Debug:
 <br>
 <img src="assets/images/error-selectElement-without-label.png" style="max-width:200px" alt="select HTML element without label Html element"/>
 <br>
 After Debug:
+<br>
 <img src="assets/images/fix-slecetElement-without-label.png" style="max-width:200px" alt="add aria-label attribute on select HTML element for don not using label HTML element"/>
 
 ### 3.  <u>Section HTML element not content a heading element</U>
 
 This warning get from W3C HTML Validator.
-To fix this warning, you have to put heading HTML element like <h1> or <h2> into every section in your code and you can hide it if don not need it by css or give the heading element this class(invisible) or class(visually-hidden) if you use bootstrap in your project .
-I added <h2> with Bootstrap class (visually-hidden) for hidding this element.
+To fix this warning, you have to put heading HTML element like h1 or h2 into every section in your code and you can hide it if don not need it by css or give the heading element this class(invisible) or class(visually-hidden) if you use bootstrap in your project .
+I added h2 with Bootstrap class (visually-hidden) for hidding this element.
 
 Before Debug:
 <br>
 <img src="assets/images/htmlvalidator-error.png" style="max-width:200px" alt="HTML wraning indicates to a section HTML element has no a heading HTML element"/>
 <br>
 After Debug:
+<br>
 <img src="assets/images/fix-section-without-heading.png" style="max-width:200px" alt="fix the warning section element has no heading Html element by adding heading elemnet with hide it by Bootstrap class visuality-hidden"/>
 
 ### 4.  <u>Bootstrap Modal not showing</u>
@@ -185,6 +188,7 @@ When click on button (add new product) not showing Bootstrap modal.
 Add bootstrap.Modal() to function that listen event on button (add new product).
 
 After Debug:
+<br>
 <img src="assets/images/fix-bootstrap-modal.png" style="max-width:200px" alt="fix the warning section element has no heading Html element by adding heading elemnet with hide it by Bootstrap class visuality-hidden"/>
 
 ##  Features
